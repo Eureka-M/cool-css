@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多重边框</title>
+</head>
+<style>
+    .box {
+        margin: 80px;
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+    }
+    /* box-shadow 实现 */
+    .box-box-shadow {
+        margin: 80px;
+        width: 300px;
+        height: 300px;
+        background-color: aquamarine;
+        /* 一个正值的扩张半径加上两个为零的偏移量以及为零的模糊值。即可拿到一道实现边框 */
+        box-shadow: 0 0 0 10px pink;  
+        /* 支持逗号分隔法。可以创建任意数量的投影 */
+        box-shadow: 0 0 0 10px deeppink, 0 0 0 20px pink; 
+        /* box-shadow是层层叠加的，第一层投影位于最里层 */
+    }
+
+    /* outline + border 实现 */
+    /* 若只需两层边框 可以做到虚线边框 box-shadow没有办法做到 */
+    .box {
+        border: 10px solid #564;
+        outline: 20px solid pink;
+        border-radius: 10px;
+        /* outline 没有圆角属性 */
+    }
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>
